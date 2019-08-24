@@ -4,45 +4,54 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             Title="Home"
+             Title="Filmes Disponiveis"
+             BackgroundColor="Blue"
              x:Class="Xfw.Views.HomePage">
+
     <ContentPage.Content>
-        <ListView
-           ItemsSource="{Binding Items}"
-           IsRefreshing="{Binding IsBusy}"
+        <ListView 
+            HasUnevenRows="True"
+            SelectionMode="None"
+            SeparatorColor="Transparent"
+            ItemsSource="{Binding Movies}"
+            IsRefreshing="{Binding IsBusy}"
             ItemTapped="ListView_ItemTapped"
-           CachingStrategy="RecycleElement">
+            CachingStrategy="RecycleElement">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid>
+                        <Grid Margin="1" ColumnSpacing="0" 
+                              RowSpacing="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto" />
-                                <RowDefinition Height="auto" />
                             </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="80" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0"
-                                   Grid.Row="0"
-                                   Grid.RowSpan="2"
-                                   Source="{Binding PictureUrl}" />
-                            <Label Grid.Column="1" 
+                            <Image Grid.Row="0"
+                                   HeightRequest="220"
+                                   Aspect="AspectFit"
+                                   Source="{Binding FullPosterPath}" />
+                                  // Source="{Binding FullBackdropPath}" />
+                            <BoxView 
                                 Grid.Row="0"
-                                Text="{Binding Title}"
-                                FontSize="Large"/>
-                            <Label Grid.Column="1" 
-                                Grid.Row="1"
-                                Text="{Binding Deion}"
-                                FontSize="Medium"/>
+                                Grid.RowSpan="2"
+                                HeightRequest="220"
+                                Opacity="0.6" Color="#000000" />
+                            <StackLayout 
+                                Margin="1"
+                                Spacing="1"
+                                VerticalOptions="End"
+                                Grid.Row="0"  Grid.RowSpan="0">
+                                <Label 
+                                TextColor="#E1E1E1" 
+                                Text="{Binding OriginalTitle}"
+                                FontAttributes="Bold"
+                                FontSize="20"/>
+                                
+                            </StackLayout>
                         </Grid>
-
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
-        
     </ContentPage.Content>
+
 </ContentPage>

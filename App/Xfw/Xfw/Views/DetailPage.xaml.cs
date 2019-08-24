@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xfw.Models;
 
 namespace Xfw.Views
 {
@@ -13,9 +14,11 @@ namespace Xfw.Views
     public partial class DetailPage : ContentPage
     {
         
-        public DetailPage()
+        public DetailPage(Movie movie )
         {
             InitializeComponent();
+            BindingContext = movie;
+
         }
     }
 }
