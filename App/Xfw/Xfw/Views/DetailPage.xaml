@@ -6,10 +6,11 @@
              mc:Ignorable="d"
              x:Class="Xfw.Views.DetailPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="16"
+                     Spacing="4">
+            <Label Text="{Binding Title}" FontSize="Medium"/>
+            <Label Text="{Binding Description}" FontSize="Small"/>
+            <Image Source="{Binding PictureUrl}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

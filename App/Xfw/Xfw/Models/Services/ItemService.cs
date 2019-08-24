@@ -24,8 +24,8 @@ namespace Xfw.Models.Services
             
             {
                 Item.Create("Cebolinha","","https://img.elo7.com.br/product/zoom/2135A33/roupa-cebolinha-monica.jpg"),
-                Item.Create("Magali","",""),
-                Item.Create("cascao","","https://pt.wikipedia.org/wiki/Ficheiro:Cascao.png"),
+                Item.Create("Magali","","https://img.elo7.com.br/product/original/25A423E/painel-magali-3x2-5-painel-magali.jpg"),
+                Item.Create("cascao","","https://upload.wikimedia.org/wikipedia/pt/3/35/Cascao.png"),
                 Item.Create("Loco","",""),
 
             };

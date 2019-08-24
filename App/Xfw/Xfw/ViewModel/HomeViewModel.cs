@@ -36,6 +36,8 @@ namespace Xfw.ViewModel
             {
 
                 var itemCollection = await itemService.GetAll();
+                Items.Clear();
+
                 foreach (var item in itemCollection)
                     Items.Add(item);
 

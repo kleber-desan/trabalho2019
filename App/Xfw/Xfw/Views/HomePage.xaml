@@ -10,6 +10,7 @@
         <ListView
            ItemsSource="{Binding Items}"
            IsRefreshing="{Binding IsBusy}"
+            ItemTapped="ListView_ItemTapped"
            CachingStrategy="RecycleElement">
             <ListView.ItemTemplate>
                 <DataTemplate>
